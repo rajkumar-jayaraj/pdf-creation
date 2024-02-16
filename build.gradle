@@ -29,6 +29,8 @@ dependencies {
 
     implementation 'com.itextpdf:kernel:8.0.3'
     implementation 'com.itextpdf:layout:8.0.3'
+// https://mvnrepository.com/artifact/com.itextpdf/zugferd
+    implementation group: 'com.itextpdf', name: 'zugferd', version: '2.0.1'
 
 
 }

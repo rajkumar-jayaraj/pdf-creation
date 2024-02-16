@@ -157,7 +157,7 @@
     "type": "TABLE",
     "coordinates": {
       "x": 28,
-      "y": 95
+      "y": 161
     },
     "nestedFields": [
       {
@@ -231,6 +231,38 @@
         },
         "type": "NORMAL",
         "nestedFields": []
+      },
+      {
+        "name": "SUMMATION",
+        "coordinates": {
+          "x": 784,
+          "y": 337
+        },
+        "type": "SUM_COLUMN",
+        "nestedFields": [
+          {
+            "name": "CREDIT",
+            "coordinates": {
+              "x": 243,
+              "y": 337
+            },
+            "type": "NORMAL",
+            "nestedFields": [
+            ]
+          },
+          {
+            "name": "DEBIT",
+            "coordinates": {
+              "x": 252,
+              "y": 337
+            },
+            "type": "NORMAL",
+            "nestedFields": [
+
+
+            ]
+          }
+        ]
       }
     ]
   }

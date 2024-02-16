@@ -14,5 +14,6 @@ public class StructureBean {
     private String name;
     private CoortinateType type;
     private Coordinates coordinates;
+    @Builder.Default private boolean summationInvolved = false;
     private List<StructureBean> nestedFields;
 }
