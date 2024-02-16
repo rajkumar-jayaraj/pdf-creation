@@ -32,34 +32,38 @@ public class Main {
         File file = new File("sampleInput.json");
         BufferedReader br = new BufferedReader(new FileReader(file));
 
-        String data = "";
+        StringBuilder data = new StringBuilder();
         String st;
         while ((st = br.readLine()) != null)
-            data += st;
+            data.append(st);
 
         Type fooType = new TypeToken<List<StructureBean>>() {
         }.getType();
-        List<StructureBean> structureBeanList = gson.fromJson(data, fooType);
+        List<StructureBean> structureBeanList = gson.fromJson(data.toString(), fooType);
 
         file = new File("sample.json");
         br = new BufferedReader(new FileReader(file));
-        data = "";
+        data = new StringBuilder();
         while ((st = br.readLine()) != null)
-            data += st;
+            data.append(st);
         fooType = new TypeToken<List<Map<String, Object>>>() {
         }.getType();
-        List<Map<String, Object>> inputMap = gson.fromJson(data, fooType);
-        PdfReader pdfReader = new PdfReader("test.pdf");
-        String outputFilePath = "result.pdf";
-        PdfWriter pdfWriter = new PdfWriter(outputFilePath);
-        PdfDocument pdfFoot = new PdfDocument(pdfWriter);
-        IEventHandler handler = new Background(pdfFoot, pdfReader);
+        List<Map<String, Object>> inputMap = gson.fromJson(data.toString(), fooType);
+        PdfDocument pdfFoot;
+        IEventHandler handler;
+        try (PdfReader pdfReader = new PdfReader("Loan Reconciliation Template.pdf")) {
+            String outputFilePath = "result.pdf";
+            PdfWriter pdfWriter = new PdfWriter(outputFilePath);
+            pdfFoot = new PdfDocument(pdfWriter);
+            handler = new Background(pdfFoot, pdfReader);
+        }
         pdfFoot.addEventHandler(PdfDocumentEvent.START_PAGE, handler);
-        Document output = new Document(pdfFoot, PageSize.A4.rotate());
+        Document output = new Document(pdfFoot, PageSize.A4);
         Map<String, Object> map = inputMap.get(0);
         setNormal(structureBeanList, output, map, 1);
         setTable(structureBeanList, output, map, pdfFoot);
         pdfFoot.close();
+        br.close();
     }
 
     private static void setTable(List<StructureBean> structureBeanList, Document output, Map<String, Object> map, PdfDocument pdfFoot) {
@@ -90,7 +94,7 @@ public class Main {
                     }).collect(Collectors.toList());
                     Text author = new Text(maps.getValue());
                     Paragraph p = new Paragraph().setFontSize(8).add(author);
-                    int y = list.get(0).getCoordinates().getY() - (count * 30);
+                    int y = list.get(0).getCoordinates().getY() - (count * 20);
                     if (y > pageLastCoordinates) {
                         p.setFixedPosition(pageNumber, list.get(0).getCoordinates().getX(), y, 200);
                         output.add(p);
@@ -98,7 +102,7 @@ public class Main {
                         pageNumber++;
                         PdfDocument template = null;
                         try {
-                            template = new PdfDocument(new PdfReader("test.pdf"));
+                            template = new PdfDocument(new PdfReader("Loan Reconciliation Template.pdf"));
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
@@ -107,17 +111,14 @@ public class Main {
                         setNormal(structureBeanList, output, map, pageNumber);
                         template.close();
                         count = 0;
-                        y = list.get(0).getCoordinates().getY() - (count * 30);
+                        y = list.get(0).getCoordinates().getY() - (count * 20);
                         p.setFixedPosition(pageNumber, list.get(0).getCoordinates().getX(), y, 200);
                         output.add(p);
                     }
-
                 }
                 count++;
             }
-
         });
-
     }
 
     private static void setNormal(List<StructureBean> structureBeanList, Document output, Map<String, Object> map, int pageNumber) {
