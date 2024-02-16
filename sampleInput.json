@@ -1,268 +1,101 @@
 [
   {
-    "name": "BRANCH",
+    "name": "Date",
     "coordinates": {
-      "x": 37,
-      "y": 475
+      "x": 505,
+      "y": 781
     },
     "type": "NORMAL",
-    "nestedFields": []
+    "nested": []
   },
   {
-    "name": "CUST-NO",
+    "name": "Bank Name",
     "coordinates": {
-      "x": 97,
-      "y": 475
+      "x": 76,
+      "y": 758
     },
     "type": "NORMAL",
-    "nestedFields": []
+    "nested": []
   },
   {
-    "name": "CCY",
+    "name": "branch Name",
     "coordinates": {
-      "x": 152,
-      "y": 475
+      "x": 83,
+      "y": 737
     },
     "type": "NORMAL",
-    "nestedFields": []
+    "nested": []
   },
   {
-    "name": "SUF",
-    "coordinates": {
-      "x": 195,
-      "y": 475
-    },
+    "name": "Currency Name",
     "type": "NORMAL",
-    "nestedFields": []
+    "coordinates": {
+      "x": 90,
+      "y": 717
+    },"nested": []
   },
   {
-    "name": "CREDIT-LIMIT",
+    "name":"loan Reconciliation",
     "coordinates": {
-      "x": 270,
-      "y": 475
+      "x": 43,
+      "y": 190
     },
-    "type": "NORMAL",
-    "nestedFields": []
-  },
-  {
-    "name": "RATE",
-    "coordinates": {
-      "x": 353,
-      "y": 475
-    },
-    "type": "NORMAL",
-    "nestedFields": []
-  },
-  {
-    "name": "DUE-DATE",
-    "coordinates": {
-      "x": 408,
-      "y": 475
-    },
-    "type": "NORMAL",
-    "nestedFields": []
-  },
-  {
-    "name": "CONTRACT-DATE",
-    "coordinates": {
-      "x": 475,
-      "y": 475
-    },
-    "type": "NORMAL",
-    "nestedFields": []
-  },
-  {
-    "name": "INST-COND",
-    "coordinates": {
-      "x": 558,
-      "y": 475
-    },
-    "type": "NORMAL",
-    "nestedFields": []
-  },
-  {
-    "name": "NO-INST",
-    "coordinates": {
-      "x": 628,
-      "y": 475
-    },
-    "type": "NORMAL",
-    "nestedFields": []
-  },
-  {
-    "name": "INST-AMT",
-    "coordinates": {
-      "x": 702,
-      "y": 475
-    },
-    "type": "NORMAL",
-    "nestedFields": []
-  },
-  {
-    "name": "PAGE",
-    "coordinates": {
-      "x": 788,
-      "y": 475
-    },
-    "type": "NORMAL",
-    "nestedFields": []
-  },
-  {
-    "name": "CUST-NAME",
-    "coordinates": {
-      "x": 75,
-      "y": 425
-    },
-    "type": "NORMAL",
-    "nestedFields": []
-  },
-  {
-    "name": "CUST-TYPE",
-    "coordinates": {
-      "x": 378,
-      "y": 425
-    },
-    "type": "NORMAL",
-    "nestedFields": []
-  },
-  {
-    "name": "BUST-TYPE",
-    "coordinates": {
-      "x": 475,
-      "y": 425
-    },
-    "type": "NORMAL",
-    "nestedFields": []
-  },
-  {
-    "name": "GUARANTEE-IND",
-    "coordinates": {
-      "x": 603,
-      "y": 425
-    },
-    "type": "NORMAL",
-    "nestedFields": []
-  },
-  {
-    "name": "GROUP",
-    "coordinates": {
-      "x": 753,
-      "y": 425
-    },
-    "type": "NORMAL",
-    "nestedFields": []
-  },
-  {
-    "name": "transaction",
-    "type": "TABLE",
-    "coordinates": {
-      "x": 28,
-      "y": 161
-    },
-    "nestedFields": [
-      {
-        "name": "DATE",
-        "coordinates": {
-          "x": 37,
-          "y": 337
-        },
-        "type": "NORMAL",
-        "nestedFields": []
-      },
-      {
-        "name": "TRANSACTION AND AMOUNT",
-        "coordinates": {
-          "x": 100,
-          "y": 337
-        },
-        "type": "NORMAL",
-        "nestedFields": []
-      },
-      {
-        "name": "DEBIT",
-        "coordinates": {
-          "x": 246,
-          "y": 337
-        },
-        "type": "NORMAL",
-        "nestedFields": []
-      },
-      {
-        "name": "CREDIT",
-        "coordinates": {
-          "x": 345,
-          "y": 337
-        },
-        "type": "NORMAL",
-        "nestedFields": []
-      },
-      {
-        "name": "BALANCE",
-        "coordinates": {
-          "x": 408,
-          "y": 337
-        },
-        "type": "NORMAL",
-        "nestedFields": []
-      },
-      {
-        "name": "CREDIT",
-        "coordinates": {
-          "x": 602,
-          "y": 337
-        },
-        "type": "NORMAL",
-        "nestedFields": []
-      },
-      {
-        "name": "BALANCE",
-        "coordinates": {
-          "x": 693,
-          "y": 337
-        },
-        "type": "NORMAL",
-        "nestedFields": []
-      },
-      {
-        "name": "TELLER",
-        "coordinates": {
-          "x": 784,
-          "y": 337
-        },
-        "type": "NORMAL",
-        "nestedFields": []
-      },
-      {
-        "name": "SUMMATION",
-        "coordinates": {
-          "x": 784,
-          "y": 337
-        },
-        "type": "SUM_COLUMN",
-        "nestedFields": [
-          {
-            "name": "CREDIT",
-            "coordinates": {
-              "x": 243,
-              "y": 337
-            },
-            "type": "NORMAL",
-            "nestedFields": [
-            ]
-          },
-          {
-            "name": "DEBIT",
-            "coordinates": {
-              "x": 252,
-              "y": 337
-            },
-            "type": "NORMAL",
-            "nestedFields": [
+    "type":"TABLE",
 
-
-            ]
-          }
-        ]
+    "nestedFields":[
+      {
+        "name": "S.No",
+        "coordinates": {
+          "x": 42,
+          "y": 611
+        },
+        "type": "NORMAL",
+        "nested": []
+      },
+      {
+        "name": "Particulars",
+        "coordinates": {
+          "x": 85,
+          "y": 611
+        },
+        "type": "NORMAL",
+        "nested": []
+      },
+      {
+        "name": "Debit Number",
+        "coordinates": {
+          "x": 187,
+          "y": 611
+        },
+        "type": "NORMAL",
+        "nested": []
+      },
+      {
+        "name": "Debit Amount",
+        "coordinates": {
+          "x": 285,
+          "y": 611
+        },
+        "type": "NORMAL",
+        "nested": []
+      },
+      {
+        "name": "Credit Number",
+        "coordinates": {
+          "x": 389,
+          "y": 611
+        },
+        "type": "NORMAL",
+        "nested": []
+      },
+      {
+        "name": "Credit Amount",
+        "coordinates": {
+          "x": 486,
+          "y": 611
+        },
+        "type": "NORMAL",
+        "nested": []
       }
     ]
   }
